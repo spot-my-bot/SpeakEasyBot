@@ -11,6 +11,7 @@ def ensure_unicode(string):
 def translate(word,from_lan, to_lan):
     word=ensure_unicode(word)
     result = Dict.translate(word,from_lan, to_lan)
+    print result.translation_tuples
     trans=[]
     for i, (input_word, output_word) in enumerate(result.translation_tuples):
         #print (input_word, output_word)
