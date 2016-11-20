@@ -39,13 +39,17 @@ def handle(msg):
             bot.sendMessage(chat_id,'I am Marco Polo, or just Marc. With me, you get to discover new foreign music AND enhance your vocabulary. You will learn rare words, words that will make other language learners marvel at your knowledge!')
             time.sleep(3.5)
             bot.sendMessage(chat_id,'But first of all, tell me what language you plan to study.')
+        elif input == 'marco' or input == 'Marco':
+            bot.sendMessage(chat_id,'Polo!')
+        elif input == 'great' or input == 'Great':
+            bot.sendMessage(chat_id,'Schoene Tag noch ;)')
         else:
             bot_resp= callLUIS(input)
             action,score=parseIntent(bot_resp)
             entities=parseEntities(bot_resp)
             #pass entities as search criteria
             bot.sendMessage(chat_id, 'Ok, ' + entities[-1][1] + ' it is!')
-            bot.sendMessage(chat_id,'I  will crammed through the lyrics of some interesting!\n')
+            bot.sendMessage(chat_id,'I  will crammed through the lyrics of some interesting songs!\n')
             time.sleep(1.5)
             bot.sendMessage(chat_id, 'Give me a second ...')
             seed()
@@ -79,7 +83,7 @@ def handle(msg):
             best_match=translate(str(wordlist[1]), 'de', 'en')[0]
             bot.sendMessage(chat_id, 'It means ' + best_match[1] + ' in English')
             time.sleep(1.5)
-            bot.sendMessage(chat_id, 'Great e!!')
+            bot.sendMessage(chat_id, 'Great eh? :) ')
             print best_match
 
 TOKEN = '298709323:AAGoMEjB6llvWIlc3HvmXBjO8GC_2JRmJvM' #sys.argv[1]  # get token from command-line
